@@ -12,7 +12,7 @@ example:
 
 ```yaml
       - name: Run Openfire
-        uses: igniterealtime/launch-openfire-action
+        uses: igniterealtime/launch-openfire-action@v1.2.0
         with:
           version: 4.9.0
 ```
@@ -25,7 +25,7 @@ example:
 
 ```yaml
       - name: Run Openfire
-        uses: igniterealtime/launch-openfire-action
+        uses: igniterealtime/launch-openfire-action@v1.2.0
         with:
           daily: 'true'
 ```
@@ -40,7 +40,20 @@ example:
 
 ```yaml
       - name: Run Openfire
-        uses: igniterealtime/launch-openfire-action
+        uses: igniterealtime/launch-openfire-action@v1.2.0
         with:
           config: ./my-config.xml
+```
+
+### logging
+
+By default, Openfire is configured to log at INFO. This can be overridden for more or less granular information on Openfire's operation during the CI pipeline
+
+example:
+
+```yaml
+      - name: Run Openfire
+        uses: igniterealtime/launch-openfire-action@v1.2.0
+        with:
+          logLevel: debug
 ```
