@@ -40,7 +40,7 @@ runs:
       shell: bash
 
     - name: Setup Java
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         java-version: ${{ steps.variables.outputs.JAVA_VERSION }}
         distribution: zulu
