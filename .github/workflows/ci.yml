@@ -123,7 +123,7 @@ jobs:
           fi
 
   test-logging:
-    name: Launch Openfire with debug logging
+    name: Check Openfire logs on debug level
     runs-on: ubuntu-24.04 # For newer curl version
     strategy:
       fail-fast: false
