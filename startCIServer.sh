@@ -63,7 +63,7 @@ function launchOpenfire {
 
 	# Replace the default log level ('info') that's in the log4j config with the configured level.
 	if [[ -n "${LOGLEVEL}" ]]; then
-	    sed -i -e 's/level=\"info\"/level=\"'"${LOGLEVEL}"'\"/' ${BASEDIR}/lib/log4j2.xml
+	    sed -i -e 's/level=\"info\"/level=\"'"${LOGLEVEL}"'\"/g' ${BASEDIR}/lib/log4j2.xml
 	fi
 
 	echo "Starting Openfire…"
