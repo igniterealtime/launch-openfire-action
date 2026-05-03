@@ -27,7 +27,7 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
@@ -56,7 +56,7 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
@@ -85,7 +85,7 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
@@ -114,14 +114,14 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
           else
             echo "Admin console up and redirecting to login page"
           fi
-            
+
   test-logging:
     name: Launch Openfire with debug logging
     runs-on: ubuntu-24.04 # For newer curl version
@@ -144,7 +144,7 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != '/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
@@ -200,7 +200,7 @@ jobs:
           OPENFIRE_CONSOLE=$(curl -s -o /dev/null -I -w "%{http_code}^%header{Location}" http://127.0.0.1:9090/index.jsp)
           RESPONSE_CODE=$(echo $OPENFIRE_CONSOLE | cut -d^ -f1)
           LOCATION=$(echo $OPENFIRE_CONSOLE | cut -d^ -f2)
-          if [ "$RESPONSE_CODE" != "302" ] | [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
+          if [ "$RESPONSE_CODE" != "302" ] || [ "$LOCATION" != 'http://127.0.0.1:9090/login.jsp?url=%2Findex.jsp' ]; then
             echo "Openfire Admin Console is not available"
             echo "Response code: $RESPONSE_CODE and Location: $LOCATION"
             exit 1
