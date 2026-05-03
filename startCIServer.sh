@@ -3,6 +3,7 @@
 set -euo pipefail
 
 HOST='example.org'
+LOGLEVEL=''
 
 usage()
 {
